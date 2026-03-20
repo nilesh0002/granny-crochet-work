@@ -386,53 +386,60 @@ body {
 .contact-wrap {
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 14px;
-  display: grid;
-  gap: 10px;
+  padding: 0;
 }
 
-.contact-wrap .btn,
-.contact-wrap .insta-btn {
-  width: 100%;
-  min-height: 48px;
-}
-
-.contact-wrap .btn {
-  height: 48px;
-}
-
-.insta-btn {
+.cta-container {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 14px;
+  min-height: 52px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.cta.whatsapp {
   background: #000;
   color: #fff;
-  text-decoration: none;
-  padding: 12px 16px;
-  border-radius: 12px;
-  transition: 0.3s ease;
-  font-weight: 600;
 }
 
-.insta-btn .icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.12);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.cta.instagram {
+  background: #f5f5f5;
+  color: #111;
+  border: 1px solid #e5e5e5;
 }
 
-.insta-btn small {
-  display: block;
-  color: #ccc;
+.cta .cta-label {
+  letter-spacing: 0.1px;
+}
+
+.cta span {
   font-size: 11px;
+  font-weight: 400;
+  opacity: 0.7;
 }
 
-.insta-btn:hover {
-  background: #222;
-  transform: translateY(-2px);
+.cta .cta-label {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.cta:active {
+  transform: scale(0.97);
 }
 
 .footer {
@@ -539,8 +546,8 @@ body {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .contact-wrap {
-    grid-template-columns: 1fr 1fr;
+  .cta-container {
+    max-width: 520px;
   }
 
   .bottom-nav {
